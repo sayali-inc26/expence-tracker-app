@@ -1,0 +1,41 @@
+.mainSidebar{
+    width: 300px;
+    /* height: 82rem; */
+    background-color: white;
+    padding: 20px;
+    border-right: 2px solid rgba(224, 224,224,1);
+
+}
+
+.sidebarHead{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.sidebarHead img{
+    height: 40px;
+}
+
+.sidebarHead h3{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sidebarItems{
+    display: flex;
+    align-items: center;
+    gap:20px
+}
+
+.sidebarItems img{
+    height: 20px;
+
+}
+
+.sidebarItems h3{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}

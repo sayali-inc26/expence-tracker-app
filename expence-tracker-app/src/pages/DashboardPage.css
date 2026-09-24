@@ -1,0 +1,136 @@
+.categoryItems{
+    display: flex;
+    justify-content: space-evenly;
+
+    margin: 20px;
+
+}
+
+.categoryCard{
+    border: 1px solid rgba(224, 224, 224, 1);
+    height: 178px;
+    width: 258px;
+    /* margin: 10px; */
+    padding: 15px;
+    border-radius: 16px;
+    line-height: 1;
+    background-color: white;
+
+}
+
+.categoryCard div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.categoryCard div img{
+    height: 48px;
+    width: 48px;
+    
+}
+
+.categoryCard div h3{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    
+
+
+.categoryCard h2{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.categoryCard p{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgba(80, 95, 118, 1);
+;
+}
+
+/* ----------------------MONTHLY SPEND------------------------- */
+
+.monthly-spend{
+    height: 364px;
+    width: 94%;
+    margin: 40px;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading div{
+    height: 26px;
+    width: 90px;
+    background-color: rgba(242, 243, 255, 1);
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgba(19, 27, 46, 1);
+
+}
+
+.heading p{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.monthName{
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    align-items:end;
+    gap: 10px;
+}
+
+.monthName div{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+/* ----------------RECENT TRANSACTIONS------------- */
+
+.recent-transactions {
+    height: 550px;
+    width: 94%;
+    margin: 40px;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.heading h4{
+    color: green;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* tbody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+} */
+

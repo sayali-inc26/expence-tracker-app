@@ -1,0 +1,81 @@
+.specificCategoryCard {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.singleCategoryCard {
+    width: 352px;
+    height: 145px;
+
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+
+    padding: 18px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.categoryIcon {
+    width: 48px;
+    height: 48px;
+
+    /* object-fit: contain; */
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    /* background-color: #0b9b63; */
+    
+}
+
+.singleCategoryCard h3 {
+    margin: 0 0 6px 0;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.categoryInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 11px;
+}
+
+.expense {
+    background-color: #e5f7ef;
+    color: #0b9b63;
+
+    padding: 3px 7px;
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+
+.categoryTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.categoryTop img{
+    object-fit:contain;
+    padding: 10px;
+}
+
+.categoryDeleteButton {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.categoryDeleteButton:hover {
+    opacity: 1;
+}

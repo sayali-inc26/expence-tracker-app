@@ -1,0 +1,108 @@
+.transactionMainContent {
+    width: 70rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-self: flex-start;
+
+    /* width: 100%;
+    padding: 20px;
+    margin: 0; */
+}
+
+.transactionMainContent h3 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+
+}
+
+.transactionMainContent p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(61, 74, 61, 1);
+
+}
+
+.transactionMainContent .mainHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainHeading button{
+    background-color: rgba(14, 161, 108, 1);
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    margin-right: 20px;
+
+}
+
+.searchSection {
+    height: 112px;
+    width: 1104px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+    align-items: center;
+}
+
+.searchSectionItem {
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.searchSectionItem label {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(109, 123, 108, 1);
+}
+
+.searchSectionItem input {
+    /* width: 100%; */
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    border: #d8dde5;
+    border-radius: 8px;
+
+    background-color: #f5f6f8;
+
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.noteInput{
+    width:412px
+}
+
+button{
+    height: 38px;
+    width: 198px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+}
+
+.all-transactions {
+    height: 702px;
+    width: 1104px;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+
+    margin-top: 30px;
+    /* padding-top: 20px; */
+
+}

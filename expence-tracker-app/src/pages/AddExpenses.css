@@ -1,0 +1,118 @@
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    line-height: 0.5;
+    
+}
+
+.mainContent h1{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mainContent h3{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(61, 74, 61, 1);
+
+}
+
+.formContent{
+    height: 647px;
+    width: 672px;
+    background-color: white;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+    padding:20px
+}
+
+.proTip{
+    height: 122px;
+    width: 672px;
+    background-color:rgba(208, 225, 251, 0.615);
+    border: 1px solid rgb(187, 220, 246);
+    border-radius: 16px;
+    margin-top: 30px;
+    line-height: normal;
+    padding: 10px 30px 10px 40px;
+    
+}
+
+.proTip h4{
+    font-size: 16px;
+    font-weight: 400;
+    color:rgba(84, 100, 122, 1);
+}
+
+
+.inputGroup {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.inputGroup label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3d4654;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.inputGroup input {
+  width: 100%;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  border: #d8dde5;
+  border-radius: 16px;
+
+  background-color: #f5f6f8;
+
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.inputGroup input:focus {
+  outline: none;
+
+  border-color: #08a66c;
+}
+
+.description{
+  height: 104px;
+}
+
+.expenseButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveExpenseButton{
+  height: 58px;
+  width:500px;
+  background-color: #08a66c;
+  color:White ;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.cancelButton{
+  height: 58px;
+  width: 100px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

@@ -1,0 +1,59 @@
+.iconContainerMain {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.iconsRow {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.iconContainerDiv {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.iconContainer {
+    height: 48px;
+    width: 48px;
+    background: rgba(241, 245, 249, 1);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 100px; */
+}
+
+/* .iconContainer img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+} */
+
+.categoryColor{
+    display: flex;
+    gap: 20px;
+}
+.colorContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.colorCircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* .expenseButtons{
+    margin-top: 200px;
+} */
