@@ -1,0 +1,258 @@
+.loginPage {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 30px;
+
+  background: linear-gradient(135deg,#f6e1bd,#d9d4f7);
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #08a66c;
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.loginHeader h1 {
+  margin: 0;
+
+  font-size: 32px;
+  color: #172033;
+}
+
+.loginHeader p {
+  margin-top: 8px;
+
+  color: #596780;
+}
+
+
+/* ---------------- LOGIN CARD ---------------- */
+
+.loginCard {
+  width: 440px;
+
+  background-color: white;
+
+  padding: 24px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.loginCard h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  color: #172033;
+}
+
+
+/* ---------------- INPUT ---------------- */
+
+.inputGroup {
+  margin-bottom: 10px;
+}
+
+.inputGroup label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3d4654;
+  font-size: 14px;
+}
+
+.inputGroup input {
+  width: 100%;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8dde5;
+  border-radius: 6px;
+
+  background-color: #f5f6f8;
+
+  font-size: 14px;
+}
+
+.inputGroup input:focus {
+  outline: none;
+
+  border-color: #08a66c;
+}
+
+
+/* ---------------- PASSWORD ---------------- */
+
+.passwordLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgotPassword {
+  border: none;
+  background: none;
+
+  color: #08a66c;
+
+  cursor: pointer;
+}
+
+.passwordBox {
+  display: flex;
+  gap: 5px;
+}
+
+.passwordBox input {
+  flex: 1;
+}
+
+.passwordBox button {
+  border: none;
+
+  background: none;
+
+  color: #08a66c;
+
+  cursor: pointer;
+}
+
+
+/* ---------------- REMEMBER ME ---------------- */
+
+.remember {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.remember input {
+  width: 16px;
+  height: 16px;
+}
+
+.remember label {
+  color: #4d5562;
+}
+
+
+/* ---------------- SIGN IN ---------------- */
+
+.signInButton {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #08a66c;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.signInButton:hover {
+  background-color: #078f5d;
+}
+
+
+/* ---------------- OR ---------------- */
+
+.orSection {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 25px 0;
+}
+
+.orSection span {
+  flex: 1;
+
+  height: 1px;
+
+  background-color: #e2e5e9;
+}
+
+.orSection p {
+  color: #697386;
+}
+
+
+/* ---------------- GOOGLE ---------------- */
+
+.googleButton {
+  width: 100%;
+
+  padding: 13px;
+
+  background-color: white;
+
+  border: 1px solid #cbd2d9;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+  
+}
+
+.googleButton img{
+    margin-right: 15px;
+} 
+
+/* ---------------- SIGN UP ---------------- */
+
+.signupText {
+  margin-top: 25px;
+
+  color: #596780;
+}
+
+.signupText span {
+  color: #08a66c;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}

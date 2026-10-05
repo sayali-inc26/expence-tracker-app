@@ -16,6 +16,9 @@ import homeIcon from "../../assets/categoryIcons/homeIcon.png";
 import dumbelIcon from "../../assets/categoryIcons/dumbelIcon.png";
 import teaCupIcon from "../../assets/categoryIcons/teaCupIcon.png";
 
+
+import { deleteCategory } from "../../utils/categories";
+
 import "./CategoryCard.css"
 
 function CategoryCard({ categories,setCategories }) {
@@ -32,7 +35,7 @@ function CategoryCard({ categories,setCategories }) {
     };
 
     
-    const handleDelete = (id) => {
+    const handleDelete = async(id) => {
 
         const confirmDelete = window.confirm(
             "Are you sure you want to delete this category?"
@@ -42,17 +45,36 @@ function CategoryCard({ categories,setCategories }) {
             return;
         }
 
-        setCategories((prevCategories) =>
-            prevCategories.filter(
-                (category) => category.id !== id
-            )
-        );
+        try 
+            { 
+                await deleteCategory(id); 
+                setCategories((prevCategories) => 
+                    prevCategories.filter( 
+                        (category) => 
+                            category.id !== id 
+                    ) 
+                ); 
+                        
+                alert( "Category deleted successfully!" ); 
+            } catch (error) { 
+                console.error( "Failed to delete category:", error ); 
+                alert( error.message || "Failed to delete category" 
+
+                ); 
+            }
+
+        // setCategories((prevCategories) =>
+        //     prevCategories.filter(
+        //         (category) => category.id !== id
+        //     )
+        // );
     };
 
     return (
         <div className="specificCategoryCard">
 
-            {categories.map((category) => (
+            {
+            categories.map((category) => (
 
                 <div
                     className="singleCategoryCard"
@@ -65,9 +87,9 @@ function CategoryCard({ categories,setCategories }) {
                         <img
                             className="categoryIcon"
                             src={categoryIcons[category.icon]}
-                            alt=""
+                            alt={category.name}
                             style={{
-                        backgroundColor: `${category.color}`
+                        backgroundColor: category.color
                     }}
                         />
 
@@ -84,11 +106,11 @@ function CategoryCard({ categories,setCategories }) {
 
                     <div className="categoryInfo">
                         <span className="expense">
-                            Expense
+                            { category.type === "INCOME" ? "Income" : "Expense" }
                         </span>
 
                         <span>
-                            {category.transactions || "0 Transactions"}
+                            { category.transactions !== undefined ? `${category.transactions} Transactions` : "0 Transactions" }
                         </span>
                     </div>
 

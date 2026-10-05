@@ -9,6 +9,8 @@ import homeIcon from "../assets/categoryIcons/homeIcon.png"
 import shoppingCartIcon from "../assets/categoryIcons/shoppingCartIcon.png"
 import teaCupIcon from "../assets/categoryIcons/teaCupIcon.png"
 
+import { createCategory } from "../utils/categories";
+
 import { useState } from "react";
 
 function NewCategoryPage({ categories, setCategories }) {
@@ -16,41 +18,101 @@ function NewCategoryPage({ categories, setCategories }) {
     const [categoryName, setCategoryName] = useState("");
     const [selectedIcon, setSelectedIcon] = useState("");
     const [selectedColor, setSelectedColor] = useState("");
+    const [categoryType, setCategoryType] = useState("EXPENSE");
 
-    const handleSubmit = (event) => {
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+
+    //     if (categoryName.trim() === "") {
+    //         alert("please enter category name");
+    //         return;
+    //     }
+
+    //     if (selectedIcon === "") {
+    //         alert("please select an icon");
+    //         return;
+    //     }
+    //     if (selectedColor === "") {
+    //         alert("please select a color");
+    //         return;
+    //     }
+
+    //     // const newCategory = {
+    //     //     id: Date.now(),
+    //     //     name: categoryName,
+    //     //     icon: selectedIcon,
+    //     //     color: selectedColor
+    //     // };
+
+    //     // setCategories((prevCategories) => [
+    //     //     ...prevCategories,
+    //     //     newCategory
+    //     // ]);
+
+    //     setCategoryName("");
+    //     setSelectedIcon("");
+    //     setSelectedColor("");
+    // };
+
+
+    const handleSubmit = async (event) => {
+
         event.preventDefault();
 
         if (categoryName.trim() === "") {
-            alert("please enter category name");
+            alert("Please enter category name");
             return;
         }
 
         if (selectedIcon === "") {
-            alert("please select an icon");
+            alert("Please select an icon");
             return;
         }
+
         if (selectedColor === "") {
-            alert("please select a color");
+            alert("Please select a color");
             return;
         }
 
-        const newCategory = {
-            id: Date.now(),
-            name: categoryName,
-            icon: selectedIcon,
-            color: selectedColor
-        };
+        try {
 
-        setCategories((prevCategories) => [
-            ...prevCategories,
-            newCategory
-        ]);
+            const newCategory = await createCategory(
+                categoryName,
+                selectedIcon,
+                selectedColor,
+                categoryType
+            );
 
-        setCategoryName("");
-        setSelectedIcon("");
-        setSelectedColor("");
+            console.log(
+                "New category:",
+                newCategory
+            );
+
+            setCategories((prevCategories) => [
+                ...prevCategories,
+                newCategory
+            ]);
+
+            setCategoryName("");
+            setSelectedIcon("");
+            setSelectedColor("");
+            setCategoryType("EXPENSE");
+
+            alert("Category created successfully!");
+
+        } catch (error) {
+
+            console.error(
+                "Failed to create category:",
+                error
+            );
+
+            alert(
+                error.message ||
+                "Failed to create category"
+            );
+        }
     };
-
 
     const colors = [
         "#10A674",
@@ -122,6 +184,28 @@ function NewCategoryPage({ categories, setCategories }) {
                                 value={categoryName}
                                 onChange={(event) => setCategoryName(event.target.value)}
                             />
+
+                        </div>
+
+                        <div className="inputGroup">
+
+                            <label>Category Type</label>
+
+                            <select
+                                value={categoryType}
+                                onChange={(event) =>
+                                    setCategoryType(event.target.value)
+                                }
+                            >
+                                <option value="EXPENSE">
+                                    Expense
+                                </option>
+
+                                <option value="INCOME">
+                                    Income
+                                </option>
+
+                            </select>
 
                         </div>
 

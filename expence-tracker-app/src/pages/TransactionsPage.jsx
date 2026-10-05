@@ -1,7 +1,44 @@
+import { useEffect } from "react";
+
 import "./TransactionsPage.css"
 import TransactionsTable from "./components/TarnsactionsTable"
+import { getTransactions } from "../utils/transactions";
 
-function TransactionsPage({ expenses,setCurrentPage,setExpenses }) {
+function TransactionsPage({ expenses,setCurrentPage,setExpenses,setEditingExpense}) {
+
+    useEffect(() => {
+
+        const loadTransactions = async () => {
+
+            try {
+
+                const data = await getTransactions();
+
+                console.log(
+                    "=========================================Transactions from backend:",
+                    data
+                );
+
+                setExpenses(data);
+
+            } catch (error) {
+
+                console.error(
+                    "Failed to load transactions:",
+                    error
+                );
+
+                alert(
+                    error.message ||
+                    "Failed to load transactions"
+                );
+            }
+        };
+
+        loadTransactions();
+
+    }, [setExpenses]);
+
      const handleAddExpense = () => {
         setCurrentPage("Add Expense");
     };
@@ -40,7 +77,11 @@ function TransactionsPage({ expenses,setCurrentPage,setExpenses }) {
 
                 <div className="all-transactions">
 
-                    <TransactionsTable expenses={expenses} setExpenses={setExpenses}/>
+                    <TransactionsTable expenses={expenses} setExpenses={setExpenses}  setCurrentPage={setCurrentPage}
+
+                setEditingExpense={
+                    setEditingExpense
+                }/>
 
                 </div>
             </div>

@@ -1,60 +1,67 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import googleLogo from "../assets/googleLogo.png"
 
-import { GoogleLogin } from "@react-oauth/google";
-import { googleLogin } from "../utils/googleAuth";
-import {loginUser, getCurrentUser } from "../utils/login";
-import "./Login.css";
+// import { GoogleLogin } from "@react-oauth/google";
+// import { googleLogin } from "../utils/googleAuth";
+import { signup } from "../utils/signup";
+import "./Signup.css";
 
-function Login({ setCurrentPage }) {
-
-    // const navigate = useNavigate();
+function Signup({ setCurrentPage }) {
 
     const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
 
 
 
-
     const handleSubmit = async (event) => {
-
         event.preventDefault();
 
-        if (userName === "" || password === "") {
-
+        if (userName === "" || email === "" || password === "") {
             alert("Please enter username and password");
-
             return;
         }
-
         try {
+            // const data = await signup(userName, email, password);
 
-            const data = await loginUser(
-                userName,
-                password,
-                rememberMe
-            );
+            // console.log("================================Signup successful:", data);
 
-            console.log("================================Login successful:", data);
+            // alert("Account created successfully!");
 
+            // setCurrentPage("login");
 
-            const user = await getCurrentUser();
+            const data = await signup(userName, email, password);
 
-            console.log("Logged in user:", user);
+            console.log("Signup successful:", data);
 
-            setCurrentPage("dashboard");
+            // Get session token from backend response
+            const sessionToken = data?.data?.sessionToken;
+
+            if (sessionToken) {
+                localStorage.setItem("sessionToken", sessionToken);
+
+                // Optional: store token type
+                localStorage.setItem(
+                    "tokenType",
+                    data?.data?.tokenType || "Bearer"
+                );
+
+                console.log("Session token saved successfully");
+            }
+
+            alert("Account created successfully!");
+
+            setCurrentPage("login");
 
         } catch (error) {
 
             console.error(error);
 
-            alert("Invalid username or password");
-
+            alert("Something went wrong while creating account");
         }
-    };
 
+    };
 
     return (
         <div className="loginPage">
@@ -82,6 +89,14 @@ function Login({ setCurrentPage }) {
                         <label>User Name</label>
 
                         <input type="text" placeholder="John Doe" value={userName} onChange={(event) => setUserName(event.target.value)} />
+
+                    </div>
+
+                    <div className="inputGroup">
+
+                        <label>Email</label>
+
+                        <input type="text" placeholder="johndoe@gmail.com" value={email} onChange={(event) => setEmail(event.target.value)} />
 
                     </div>
 
@@ -118,74 +133,24 @@ function Login({ setCurrentPage }) {
                     </div>
 
                     <button type="submit" className="signInButton">
-                        Sign In
+                        Sign Up
                     </button>
-
-
-
-
                 </form>
 
-                <div className="orSection">
-
-                    <span></span>
-
-                    <p>OR</p>
-
-                    <span></span>
-
-                </div>
-
-                <div className="googleButton">
-
-                    <GoogleLogin
-
-                        onSuccess={async (credentialResponse) => {
-
-                            console.log("Google Response:", credentialResponse);
-
-                            try {
-
-                                const data = await googleLogin(
-                                    credentialResponse,
-                                    rememberMe
-                                );
-
-                                console.log("Backend Response:", data);
-
-                                // alert("Google Login Successful!");
-
-                                setCurrentPage("dashboard");
-
-                            } catch (error) {
-
-                                console.log(error);
-
-                                alert("Google Login Failed");
-
-                            }
-
-                        }}
-
-                        onError={() => {
-
-                            console.log("Google Login Failed");
-
-                            alert("Google Login Failed");
-
-                        }}
-
-                    />
-                </div>
             </div>
 
+
             <p className="signupText">
-                Don't have an account?
-                <span onClick={() => setCurrentPage("signup")}>{" "}Sign Up for Free</span>
+                Already have an account?
+                <span onClick={() => setCurrentPage("login")}>
+                    {" "}Sign In
+                </span>
             </p>
+
+
 
         </div>
     );
 }
 
-export default Login;
+export default Signup;
